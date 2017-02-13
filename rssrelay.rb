@@ -69,7 +69,7 @@ class RSSRelay < Sinatra::Application
           :link => item.link,
           ## Remove comment to use description
           #:description => item.description,
-          :enclosure => item.enclosure.attribute('url'),
+          :enclosure => item.enclosure,
           :published => 
             if feed.class.to_s == "RSS::RDF"
               item.dc_date
