@@ -48,14 +48,14 @@ class RSSRelay < Sinatra::Application
     end
 
     # If the cache can serve the requested number of items, serve them from cache
-    if cached_items && number_of_items_cached >= number_of_items_requested
-      parsed_cached_items["from_proxy_cache"] = true
-      parsed_cached_items["items"] = parsed_cached_items["items"][0, 
-        number_of_items_requested]
-      return parsed_cached_items.to_json
-
+    #if cached_items && number_of_items_cached >= number_of_items_requested
+    #  parsed_cached_items["from_proxy_cache"] = true
+    #  parsed_cached_items["items"] = parsed_cached_items["items"][0, 
+    #    number_of_items_requested]
+    #  return parsed_cached_items.to_json
+    
     # Otherwise, retrieve the feed directly
-    else
+    #else
 
       items = nil
 
