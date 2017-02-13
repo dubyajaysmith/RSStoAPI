@@ -67,7 +67,8 @@ class RSSRelay < Sinatra::Application
           {
           :title => item.title, 
           :link => item.link,
-          :description => item.description,
+          ## Remove comment to use description
+          #:description => item.description,
           :enclosure => item.enclosure,
           :published => 
             if feed.class.to_s == "RSS::RDF"
