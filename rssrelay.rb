@@ -78,7 +78,8 @@ class RSSRelay < Sinatra::Application
             end
           }
         }
-        print feed+"\n"
+        print feed
+        print "\n"
       end
 
       # Get the number of items to cache, from a config variable or the default of 25
