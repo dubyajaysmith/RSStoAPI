@@ -62,13 +62,10 @@ class RSSRelay < Sinatra::Application
       # Retrieve and parse the feed from the URL provided
       open(params[:url]) do |rss|
         feed = RSS::Parser.parse(rss, false)
-        feedName = feed.title,
-        #img = feed.itunes:image
         items = feed.items.map{|item| 
           {
-          :name => feedName, 
+          :name => feed.title,            
           :title => item.title,
-          #:image => img,
           ## Remove comment to use description
           #:description => item.description,
           :enclosure => item.enclosure,
