@@ -65,7 +65,7 @@ class RSSRelay < Sinatra::Application
         feed = RSS::Parser.parse(rss, false)
         items = feed.items.map{|item| 
           {
-          :name => feed.title,            
+          :name => feed.title,
           :title => item.title,
           ## Remove comment to use description
           #:description => item.description,
@@ -78,6 +78,7 @@ class RSSRelay < Sinatra::Application
             end
           }
         }
+        print feed+"\n"
       end
 
       # Get the number of items to cache, from a config variable or the default of 25
