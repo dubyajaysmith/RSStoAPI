@@ -60,16 +60,12 @@ class RSSRelay < Sinatra::Application
 
       items = nil
 
-      # Retrieve and parse the feed from the URL provided
+      # Retrieve and parse the feed from the URL provided : dubyajaysmith
       open(params[:url]) do |rss|
         feed = RSS::Parser.parse(rss, false)
-        channel = feed.map{|chan| 
-          {
-            :name => chan.title
-          }
         items = feed.items.map{|item| 
           {
-          :name => channel.name,
+          :name => feed.channel.title,
           :title => item.title,
           ## Remove comment to use description
           #:description => item.description,
