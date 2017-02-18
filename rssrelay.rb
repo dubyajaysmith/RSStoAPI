@@ -69,7 +69,7 @@ class RSSRelay < Sinatra::Application
           }
         items = feed.items.map{|item| 
           {
-          :name => channel.title,
+          :name => channel.name,
           :title => item.title,
           ## Remove comment to use description
           #:description => item.description,
