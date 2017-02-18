@@ -65,7 +65,7 @@ class RSSRelay < Sinatra::Application
         feed = RSS::Parser.parse(rss, false)
         channel = feed.map{|chan| 
           {
-            :name => channel.title
+            :name => chan.title
           }
         items = feed.items.map{|item| 
           {
